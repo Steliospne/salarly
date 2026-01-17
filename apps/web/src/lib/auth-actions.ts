@@ -1,7 +1,5 @@
 import { createServerFn } from '@tanstack/react-start'
 import { getRequestHeaders } from '@tanstack/react-start/server'
-import { prisma } from '@salarly/database'
-import type { User } from 'node_modules/@salarly/database/prisma/generated/client'
 import type { LoginForm, SignupForm } from './definitions'
 import { authClient } from '@/integrations/auth/client'
 import { auth } from '@/integrations/auth/server'
@@ -39,21 +37,15 @@ export async function signoutFn() {
   router.navigate({ to: '/auth/login' })
 }
 
-export const getCurrentUser = createServerFn({ method: 'GET' }).handler(
+export const getSession = createServerFn({ method: 'GET' }).handler(
   async () => {
     const headers = getRequestHeaders()
     const session = await auth.api.getSession({ headers })
 
-    return session?.user
+    if (!session) {
+      return null
+    }
+
+    return session
   },
 )
-
-export const getUserByEmail = createServerFn({ method: 'GET' })
-  .inputValidator((email: User['email']) => email)
-  .handler(async ({ data: email }) => {
-    const user = await prisma.user.findUnique({
-      where: { email },
-    })
-
-    return user
-  })

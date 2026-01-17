@@ -15,16 +15,16 @@ import { useState } from 'react'
 import { FieldError } from '@salarly/ui/components/field'
 import type { BetterAuthError, LoginForm } from '@/lib/definitions'
 import piggy from '@/public/piggy.png'
-import { getCurrentUser, loginFn } from '@/lib/auth-actions'
+import { getSession, loginFn } from '@/lib/auth-actions'
 import { LoginFormSchema } from '@/lib/definitions'
 import { FormInput } from '@/components/form'
 
 export const Route = createFileRoute('/auth/login')({
   component: LoginPage,
   beforeLoad: async () => {
-    const user = await getCurrentUser()
+    const session = await getSession()
 
-    if (user) throw redirect({ to: '/' })
+    if (session) throw redirect({ to: '/' })
   },
 })
 

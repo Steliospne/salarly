@@ -15,11 +15,9 @@ import type { BetterAuthError, SignupForm } from '@/lib/definitions'
 import { SignupFormSchema } from '@/lib/definitions'
 import { FormInput } from '@/components/form'
 import { signupFn } from '@/lib/auth-actions'
-import { authMiddleware } from '@/middleware/auth-middleware'
 
 export const Route = createFileRoute('/auth/sign-up')({
   component: SignupPage,
-  server: { middleware: [authMiddleware] },
 })
 
 function SignupPage() {
