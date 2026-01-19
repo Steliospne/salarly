@@ -43,6 +43,7 @@
     "zod": "^4.3.5"
   },
   "devDependencies": {
+    "@expo/cli": "^54.0.21",
     "@playwright/test": "^1.57.0",
     "@salarly/eslint-config": "workspace:*",
     "@salarly/typescript-config": "workspace:*",

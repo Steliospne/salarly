@@ -1,7 +1,8 @@
 packages:
   - apps/*
+  - apps/*/
+  - apps/*/*
   - packages/*
-
 onlyBuiltDependencies:
   - '@prisma/engines'
   - core-js-pure
