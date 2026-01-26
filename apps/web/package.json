@@ -1,5 +1,5 @@
 {
-  "name": "salarly",
+  "name": "salarly-web",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -9,7 +9,7 @@
   },
   "packageManager": "pnpm@10.27.0",
   "scripts": {
-    "dev": "vite dev",
+    "dev:web": "vite dev",
     "build": "vite build",
     "start": "node --env-file=.env .output/server/index.mjs",
     "lint": "eslint",
