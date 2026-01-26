@@ -38,6 +38,10 @@
     "db:seed": {
       "cache": false
     },
+    "db:reset": {
+      "cache": false,
+      "persistent": false
+    },
     "start": {
       "cache": false,
       "persistent": true

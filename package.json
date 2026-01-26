@@ -13,6 +13,7 @@
     "db:migrate:dev": "turbo run db:migrate:dev",
     "db:push": "turbo run db:push",
     "db:seed": "turbo run db:seed",
+    "db:reset": "turbo run db:reset",
     "studio": "turbo run studio",
     "dev:web": "turbo run dev:web",
     "dev:mobile": "turbo run dev:mobile",
@@ -23,8 +24,8 @@
     "check-types": "turbo run check-types"
   },
   "devDependencies": {
-    "prettier": "^3.7.4",
-    "turbo": "^2.7.3",
-    "typescript": "^5.9.3"
+    "prettier": "3.7.4",
+    "turbo": "2.7.6",
+    "typescript": "5.9.3"
   }
 }
